@@ -1,0 +1,7 @@
+name: smp-utilities
+version: '${project.version}'
+main: net.nimajnebec.smputilities.SMP
+api-version: '1.20'
+authors: [NimajnebEC]
+description: Miscellaneous utilities for our SMPs
+softdepend: [SuperVanish, PremiumVanish]
