@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Build Artefact for Release
 
 on:
   push:
@@ -30,4 +30,3 @@ jobs:
         uses: softprops/action-gh-release@v0.1.15
         with:
           files: target/*.jar
-          body_path: CHANGELOG.md
