@@ -5,3 +5,12 @@ api-version: '1.20'
 authors: [NimajnebEC]
 description: Miscellaneous utilities for our SMPs
 softdepend: [SuperVanish, PremiumVanish]
+permissions:
+  smp.moderate:
+    description: Allow the player to enter moderation mode
+    default: op
+commands:
+  moderate:
+    description: Enables moderation mode
+    usage: /moderate
+    permission: smp.moderate
