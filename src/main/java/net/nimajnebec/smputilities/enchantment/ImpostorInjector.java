@@ -30,7 +30,7 @@ public class ImpostorInjector {
         this.replaceRegistry(this.impostor.getTarget());
     }
 
-    private void replaceRegistry(Enchantment enchantment) throws IllegalAccessException {
+    private void replaceRegistry(Enchantment enchantment) {
         Holder.Reference<Enchantment> reference = Holder.Reference.createIntrusive(BuiltInRegistries.ENCHANTMENT.asLookup(), enchantment);
         ObfuscationMapper.HOLDER_REFERENCE.bindKey(reference, this.registryKey);
 
@@ -40,7 +40,6 @@ public class ImpostorInjector {
         ObfuscationMapper.MAPPED_REGISTRY.geByLocation(registry).put(registryKey.location(), reference);
         ObfuscationMapper.MAPPED_REGISTRY.getByKey(registry).put(registryKey, reference);
         ObfuscationMapper.MAPPED_REGISTRY.getByValue(registry).put(enchantment, reference);
-        ObfuscationMapper.MAPPED_REGISTRY.getTags(registry);
     }
 
 }

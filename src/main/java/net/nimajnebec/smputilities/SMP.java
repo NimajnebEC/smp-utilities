@@ -5,7 +5,7 @@ import net.nimajnebec.smputilities.enchantment.EnchantmentController;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SMP extends JavaPlugin {
-    EnchantmentController enchantmentController = new EnchantmentController(this.getConfig());
+    final EnchantmentController enchantmentController = new EnchantmentController(this.getConfig());
 
     @Override
     public void onEnable() {

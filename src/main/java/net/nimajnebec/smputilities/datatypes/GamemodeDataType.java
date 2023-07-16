@@ -6,7 +6,7 @@ import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
 public class GamemodeDataType implements PersistentDataType<String, GameMode> {
-    public static GamemodeDataType INSTANCE = new GamemodeDataType();
+    public static final GamemodeDataType INSTANCE = new GamemodeDataType();
 
     @Override
     public @NotNull Class<String> getPrimitiveType() {

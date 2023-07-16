@@ -35,12 +35,10 @@ public class ModerateCommand implements CommandExecutor {
             return true;
         }
 
-        if (!(sender instanceof Player)) {
+        if (!(sender instanceof Player player)) {
             sender.sendMessage(Component.text("[!] Only players may use this command").color(NamedTextColor.RED));
             return true;
         }
-
-        Player player = (Player) sender;
 
         PersistentDataContainer container = player.getPersistentDataContainer();
         if (container.has(KEY_IS_MODERATING, PersistentDataType.BOOLEAN) && container.get(KEY_IS_MODERATING, PersistentDataType.BOOLEAN))
