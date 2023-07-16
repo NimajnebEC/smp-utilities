@@ -1,4 +1,4 @@
-package net.nimajnebec.smputilities.reflection;
+package net.nimajnebec.smputilities.reflection.proxies;
 
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;

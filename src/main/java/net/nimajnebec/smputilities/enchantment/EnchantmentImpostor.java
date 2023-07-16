@@ -8,25 +8,18 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.nimajnebec.smputilities.reflection.ObfuscationMapping;
+import net.nimajnebec.smputilities.reflection.ObfuscationMapper;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Map;
 
 public class EnchantmentImpostor extends Enchantment {
 
     private final Enchantment target;
-    private final Method checkCompatibilityMethod;
-    private final Method getDescriptionMethod;
 
     public EnchantmentImpostor(Enchantment handle) {
         super(handle.getRarity(), handle.category, handle.slots);
         this.target = handle;
-
-        checkCompatibilityMethod = ObfuscationMapping.METHOD_ENCHANTMENT_CHECK_COMPATIBILITY.get();
-        getDescriptionMethod = ObfuscationMapping.METHOD_ENCHANTMENT_GET_CREATE_DESCRIPTION_ID.get();
     }
 
     public Enchantment getTarget() {
@@ -75,20 +68,12 @@ public class EnchantmentImpostor extends Enchantment {
 
     @Override
     public boolean checkCompatibility(@NotNull Enchantment other) {
-        try {
-            return (boolean) checkCompatibilityMethod.invoke(target, other);
-        } catch (IllegalAccessException | InvocationTargetException e) {
-            throw new RuntimeException(e);
-        }
+        return ObfuscationMapper.ENCHANTMENT.checkCompatibility(target, other);
     }
 
     @Override
     public @NotNull String getOrCreateDescriptionId() {
-        try {
-            return (String) getDescriptionMethod.invoke(target);
-        } catch (IllegalAccessException | InvocationTargetException e) {
-            throw new RuntimeException(e);
-        }
+        return ObfuscationMapper.ENCHANTMENT.getOrCreateDescriptionId(target);
     }
 
     @Override

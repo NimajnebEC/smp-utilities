@@ -1,4 +1,4 @@
-package net.nimajnebec.smputilities.reflection;
+package net.nimajnebec.smputilities.reflection.proxies;
 
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import it.unimi.dsi.fastutil.objects.Reference2IntOpenHashMap;
@@ -9,7 +9,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import xyz.jpenilla.reflectionremapper.proxy.annotation.FieldGetter;
-import xyz.jpenilla.reflectionremapper.proxy.annotation.FieldSetter;
 import xyz.jpenilla.reflectionremapper.proxy.annotation.Proxies;
 
 import java.util.Map;
