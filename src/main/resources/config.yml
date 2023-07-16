@@ -1,0 +1,7 @@
+enchantment:
+  # Allow Mending and Infinity enchantments to be combined
+  allow-mending-infinity: false
+  # Allow more sword enchantments on axes
+  allow-axe-fire-aspect: false
+  allow-axe-knockback: false
+  allow-axe-looting: false
